@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var program = require('commander');
 var express = require('express');
 var app = express();
