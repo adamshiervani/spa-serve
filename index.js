@@ -15,6 +15,7 @@ module.exports = function() {
     port: program.port || '3000',
     dir: program.args[0] || './'
   };
+
   app.use(express.static(opts.dir));
   app.use(function (req, res, next) {
     if (req.method === 'GET' && req.accepts('html')) {
@@ -24,7 +25,7 @@ module.exports = function() {
     }
   });
 
-  app.listen(port, () => {
+  app.listen(opts.port, () => {
     console.log('Listening at localhost:' + opts.port);
   });
 }
