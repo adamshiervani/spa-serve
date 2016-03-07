@@ -1,6 +1,6 @@
 {
   "name": "spa-serve",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple command-line server, tailored for Single Page Applications",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,8 @@
   "dependencies": {
     "commander": "^2.9.0",
     "express": "^4.13.4"
+  },
+  "bin": {
+    "spa-serve": "index.js"
   }
 }
