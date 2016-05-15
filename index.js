@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var program = require('commander');
-var express = require('express');
-var app = express();
+const program = require('commander');
+const express = require('express');
+const app = express();
 
 program
   .version(require('./package.json').version)
@@ -11,21 +11,21 @@ program
   .option('-p, --port [port]', 'Specify the port number')
   .parse(process.argv);
 
-var opts = {
+const options = {
   index: program.index || 'index.html',
   port: program.port || '3000',
   dir: program.args[0] || './'
 };
 
-app.use(express.static(opts.dir));
-app.use(function (req, res, next) {
+app.use(express.static(options.dir));
+app.use((req, res, next) => {
   if (req.method === 'GET' && req.accepts('html')) {
-    return res.sendFile(opts.index, {root: opts.dir}, next);
+    return res.sendFile(options.index, {root: options.dir}, next);
   } else {
     return next();
   }
 });
 
-app.listen(opts.port, () => {
-  console.log('Listening at localhost:' + opts.port);
+app.listen(options.port, () => {
+  console.log('Serving ' + options.index + ' on port ' + options.port);
 });
