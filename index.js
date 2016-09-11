@@ -1,8 +1,10 @@
 #!/usr/bin/env node
 
 const program = require('commander');
+const compression = require('compression')
 const express = require('express');
 const app = express();
+app.use(compression());
 
 program
   .version(require('./package.json').version)
