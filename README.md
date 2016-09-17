@@ -8,7 +8,7 @@ A small library command-line server, tailored for Single Page Applications
 
 ## Usage
 ```
-Usage: spa-serve <dir> [options]
+Usage: spa-serve [options]
   Options:
     -h, --help               output usage information
     -V, --version            output the version number

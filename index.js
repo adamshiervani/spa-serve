@@ -8,7 +8,7 @@ app.use(compression());
 
 program
   .version(require('./package.json').version)
-  .usage('<dir> [options]')
+  .usage('[options]')
   .option('-i, --index [indexfile]', 'Specify the index file')
   .option('-p, --port [port]', 'Specify the port number')
   .parse(process.argv);
@@ -16,7 +16,7 @@ program
 const options = {
   index: program.index || 'index.html',
   port: program.port || '3000',
-  dir: program.args[0] || './'
+  dir: './'
 };
 
 app.use(express.static(options.dir));
