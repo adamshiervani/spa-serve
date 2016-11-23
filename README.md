@@ -4,7 +4,7 @@ spa-serve
 A small library command-line server, tailored for Single Page Applications
 ## Installation
 
-  `npm i -g spa-server`
+  `npm i -g spa-serve`
 
 ## Usage
 ```
